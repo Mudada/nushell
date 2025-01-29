@@ -197,6 +197,18 @@ impl Command for Find {
                 )),
             },
             Example {
+                description: "Remove ANSI sequenses from result",
+                example:"[[foo bar]; [abc 123] [def 456]] | find --raw 123",
+                result: Some(Value::list(
+                    vec![Value::test_record(record! {
+                        "foo" => Value::test_string("abc"),
+                        "bar" => Value::test_string("bar")
+                    }
+                    )],
+                    Span::test_data(),
+                ))
+            },
+            Example {
                 description: "Find and highlight text in specific columns",
                 example: "[[col1 col2 col3]; [moe larry curly] [larry curly moe]] | find moe --columns [col1]",
                 result: Some(Value::list(
