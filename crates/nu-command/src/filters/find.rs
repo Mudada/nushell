@@ -165,11 +165,6 @@ impl Command for Find {
                 )),
             },
             Example {
-                description: "Remove ANSI sequences from result",
-                example: "[[foo bar]; [abc 123] [def 456]] | find 123 | get bar | ansi strip",
-                result: None, // This is None because ansi strip is not available in tests
-            },
-            Example {
                 description: "Remove ANSI sequenses from result",
                 example:"[[foo bar]; [abc 123] [def 456]] | find --raw 123",
                 result: Some(Value::list(
