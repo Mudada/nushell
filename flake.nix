@@ -28,5 +28,8 @@
 	  mainProgram = "nu";
 	};
       };
+      devShells.${system}.default = pkgs.mkShell {
+	buildInputs = [pkgs.rustup];
+      };
     };
 }
